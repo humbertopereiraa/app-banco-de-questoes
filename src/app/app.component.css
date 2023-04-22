@@ -1,0 +1,7 @@
+.content {
+  margin-left: 50px;
+  transition: 0.3s;
+}
+.content.sidebarExpanded {
+  margin-left: 240px;
+}

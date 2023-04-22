@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="col-md-6">
+    <h1>Cadastre-se</h1>
+    <form [formGroup]="professorFormGroup">
+
+      <div class="mb-3">
+        <label for="nome" class="form-label">Nome*</label>
+        <input type="text" class="form-control" id="nome" formControlName="nome">
+        <ng-container *ngIf="professorFormGroup.controls['nome'].touched">
+          <span *ngIf="professorFormGroup.controls['nome'].errors?.['required']">
+            Campo obrigatório
+          </span>
+        </ng-container>
+      </div>
+
+      <div class="mb-3">
+        <label for="sobrenome" class="form-label">Sobrenome*</label>
+        <input type="text" class="form-control" id="sobrenome" formControlName="sobrenome">
+        <ng-container *ngIf="professorFormGroup.controls['sobrenome'].touched">
+          <span *ngIf="professorFormGroup.controls['sobrenome'].errors?.['required']">
+            Campo obrigatório
+          </span>
+        </ng-container>
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email*</label>
+        <input type="email" class="form-control" id="email" formControlName="email">
+        <ng-container *ngIf="professorFormGroup.controls['email'].touched">
+          <span *ngIf="professorFormGroup.controls['email'].errors?.['required']">
+            Campo obrigatório
+          </span>
+          <span *ngIf="professorFormGroup.controls['email'].errors?.['email']">
+            E-mail inválido
+          </span>
+        </ng-container>
+      </div>
+
+      <div class="mb-3">
+        <label for="senha" class="form-label">Senha*</label>
+        <input type="password" id="senha" class="form-control" aria-labelledby="passwordHelpBlock" formControlName="senha">
+        <ng-container *ngIf="professorFormGroup.controls['senha'].touched">
+          <span *ngIf="professorFormGroup.controls['senha'].errors?.['required']">
+            Campo obrigatório
+          </span>
+        </ng-container>
+      </div>
+
+      <button type="submit" class="btn btn-primary" (click)="cadastrar()" [disabled]="!professorFormGroup.valid">Cadastrar</button>
+
+    </form>
+  </div>
+</div>

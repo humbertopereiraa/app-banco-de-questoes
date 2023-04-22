@@ -1,0 +1,5 @@
+<app-sideMenuBar [isExpanded]="sidebarExpanded" (toggleSidebar)="sidebarExpanded = !sidebarExpanded" *ngIf="isUsuarioLogado"></app-sideMenuBar>
+
+<div [ngClass]="{ 'sidebarExpanded': sidebarExpanded && isUsuarioLogado }">
+  <router-outlet></router-outlet>
+</div>
